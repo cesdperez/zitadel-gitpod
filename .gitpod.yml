@@ -4,7 +4,7 @@ tasks:
       curl -fsSL https://raw.githubusercontent.com/zitadel/zitadel/main/docs/docs/self-hosting/deploy/docker-compose.yaml > docker-compose.yml
       docker compose pull
     command: |
-      docker compose up
+      ZITADEL_DOMAIN=$(gp url 8080) docker compose -p zitadel up
 
 ports:
   - name: Zitadel
