@@ -1,7 +1,6 @@
 tasks:
   - name: Start Zitadel
     init: |
-      curl -fsSL https://raw.githubusercontent.com/zitadel/zitadel/main/docs/docs/self-hosting/deploy/docker-compose.yaml > docker-compose.yml
       docker compose pull
     command: |
       ZITADEL_DOMAIN=$(gp url 8080) docker compose -p zitadel up
