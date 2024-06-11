@@ -3,10 +3,10 @@ tasks:
     init: |
       docker compose pull
     command: |
-      ZITADEL_EXTERNALDOMAIN=$(gp url 8080) docker compose -p zitadel up
+      ZITADEL_EXTERNALDOMAIN=zitadel.$(gp url 8080) ZITADEL_EXTERNALSECURE=true ZITADEL_EXTERNALPORT=443 docker compose -p zitadel up
 
 ports:
   - name: Zitadel
     description: Zitadel admin console + API
-    port: 8080
+    port: 443
     visibility: public
