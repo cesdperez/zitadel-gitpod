@@ -1,0 +1,13 @@
+tasks:
+  - name: Start Zitadel
+    init: |
+      curl -fsSL https://raw.githubusercontent.com/zitadel/zitadel/main/docs/docs/self-hosting/deploy/docker-compose.yaml > docker-compose.yml
+      docker compose pull
+    command: |
+      docker compose up
+
+ports:
+  - name: Zitadel
+    description: Zitadel admin console + API
+    port: 8080
+    visibility: public
