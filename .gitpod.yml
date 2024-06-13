@@ -9,5 +9,5 @@ tasks:
 ports:
   - name: Zitadel
     description: Zitadel admin console + API
-    port: 443
+    port: 8080
     visibility: public
