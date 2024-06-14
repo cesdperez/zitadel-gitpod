@@ -16,7 +16,6 @@ services:
       - 'ZITADEL_DATABASE_POSTGRES_ADMIN_PASSWORD=postgres'
       - 'ZITADEL_DATABASE_POSTGRES_ADMIN_SSL_MODE=disable'
       - ZITADEL_EXTERNALDOMAIN=${ZITADEL_EXTERNALDOMAIN}
-      - ZITADEL_EXTERNALSECURE=${ZITADEL_EXTERNALSECURE}
     depends_on:
       db:
         condition: 'service_healthy'
