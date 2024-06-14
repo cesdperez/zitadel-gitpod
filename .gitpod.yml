@@ -2,11 +2,11 @@ tasks:
   - name: Start Zitadel
     init: |
       docker compose pull
-      export ZITADEL_EXTERNALDOMAIN=$(gp url 8080)
-      export ZITADEL_EXTERNALPORT=8080
-      export ZITADEL_EXTERNALSECURE=true
     command: |
-      docker compose -p zitadel up
+      docker-compose run \
+        -e ZITADEL_EXTERNALDOMAIN=$(gp url 8080) \
+        -e ZITADEL_EXTERNALSECURE=true \
+        zitadel
 
 ports:
   - name: Zitadel
