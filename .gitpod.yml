@@ -3,7 +3,7 @@ tasks:
     init: |
       docker compose pull
     command: |
-      ZITADEL_EXTERNALDOMAIN=$(gp url 8080) ZITADEL_EXTERNALSECURE=true docker-compose -p zitadel up
+      docker-compose -p zitadel up
 
 ports:
   - name: Zitadel
